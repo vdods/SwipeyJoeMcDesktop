@@ -6,8 +6,8 @@ A service which recognizes sequences of hand gestures tracked by the Leap Motion
 
 Swipey Joe is written in Python using `PyUserInput` and is ostensibly cross platform, though I haven't tested it on anything but Linux.
 
-- `Leap`; make sure that the files `Leap.py`, `LeapPython.so`, and `libLeap.so` (where `so` would be `dylib` or `dll` on Mac and Windows respectively) are in your Python path.
-- `PyUserInput` (in particular `pykeyboard` and `pymouse`) and its particular dependencies.
+- `Leap` -- make sure that the files `Leap.py`, `LeapPython.so`, and `libLeap.so` (where `.so` would be `.dylib` or `.dll` on Mac and Windows respectively) are in your Python path.
+- `PyUserInput` -- in particular `pykeyboard` -- and its particular dependencies.
 
 ## Usage Instructions
 
@@ -19,8 +19,7 @@ Swipey Joe recognizes the following Leap-based hand gestures:
 - Hand swipe (a quick, linear motion with the fingers extended) in any of the 8 compass directions E, NE, N, NW, W, SW, S, SE (think of the compass hanging vertically on a wall), distinguishing between left and right hands.
 - Key tap (With hand extended, palm down, using a single finger to quickly tap in mid-air, as if there were a keyboard directly under the finger) with any of the 5 fingers.
 
-Here is an example configuration file with comments describing what each line does.  The brief_description and detailed_description key/value pairs are not currently used,
-but will be once the visualization component is implemented.
+Here is an example configuration.  The brief_description and detailed_description key/value pairs are not currently used past self-documentation, but will be once the visualization component is implemented.
 
     {
         "description":"Victor Dods' configuration file for use with Linux/KDE.",
@@ -115,8 +114,13 @@ The value of `<keycommand>` must be one of the following.  The `hold` and `relea
 - `<keyname>:hold` - Press the named key and leave it held down.
 - `<keyname>:release` - Release the named key (before any other keys in the action are pressed).
 
-The value of `<keyname>` must be a named key, such as `a`, `space`, `control`, etc., and include platform-specific names, some of which are quite strange.  The available keys (as well as unsupported keys) are printed upon Swipey Joe startup.
+The value of `<keyname>` must be a named key, such as `x`, `space`, `control`, etc., including platform-specific names, some of which are quite strange.  The available keys (as well as unsupported keys) 
+are printed to console upon Swipey Joe startup.
 
 ## Author
 
 Victor Dods at Leap Motion (vdods@leapmotion.com or victor.dods@gmail.com)
+
+## History
+
+- `2015.06.09` -- Initial publication.
