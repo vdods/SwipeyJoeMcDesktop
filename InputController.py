@@ -1,6 +1,5 @@
 import Log
 import pykeyboard
-import pymouse
 import time
 
 class InputController:
@@ -10,7 +9,6 @@ class InputController:
     """
     def __init__ (self):
         self.__init_keyboard()
-        self.__init_mouse()
     
     def activate_key_combo (self, combo_string):
         Log.record('activate_key_combo("{0}")\n'.format(combo_string))
@@ -196,7 +194,3 @@ class InputController:
         self.key_map_inverse = {key:name for name,key in self.key_map.iteritems()}
         #Log.record('{0}'.format(self.key_map_inverse))
         self.held_keys = set([])
-
-    def __init_mouse (self):
-        self.mouse = pymouse.PyMouse()
-        
